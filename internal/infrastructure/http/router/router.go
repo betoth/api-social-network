@@ -19,7 +19,6 @@ func NewRouter(userController *controllers.UserController, authController *contr
 	api := router.PathPrefix("/api").Subrouter()
 	api.Use(middlewares.AuthMiddleware)
 
-	api.HandleFunc("/logout", authController.Logout).Methods("POST")
 	api.HandleFunc("/users/{id}", userController.GetUser).Methods("GET")
 	api.HandleFunc("/users", userController.GetAllUsers).Methods("GET")
 	api.HandleFunc("/users/{id}", userController.UpdateUser).Methods("PUT")

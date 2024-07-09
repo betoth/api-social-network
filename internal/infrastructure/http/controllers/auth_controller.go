@@ -52,14 +52,3 @@ func (c *AuthController) Login(w http.ResponseWriter, r *http.Request) {
 		Token: token,
 	})
 }
-
-// Logout godoc
-// @Summary Logout a user
-// @Description Logout a user
-// @Tags auth
-// @Produce json
-// @Success 200 {string} string "Logged out successfully"
-// @Router /logout [post]
-func (c *AuthController) Logout(w http.ResponseWriter, r *http.Request) {
-	response.JSON(w, http.StatusOK, "Logged out successfully")
-}
